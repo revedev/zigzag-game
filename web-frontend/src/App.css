@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;600&display=swap');
+
+body {
+  margin: 0;
+  background: #000;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden; /* STOP SCROLLING ON MOBILE */
+  touch-action: none; /* DISABLE PINCH ZOOM */
+}
+
+.game-container {
+  position: fixed; /* Lock to screen */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #000000 100%);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* UI Overlay */
+.ui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.score-hud {
+  align-self: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4rem; /* Bigger score for mobile */
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 0 20px #00f3ff;
+  opacity: 0.8;
+}
+
+.menu-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(15, 15, 20, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  pointer-events: auto;
+  width: 80%;
+  max-width: 300px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.menu-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #00f3ff, #0066ff);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.settings-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  pointer-events: auto;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}

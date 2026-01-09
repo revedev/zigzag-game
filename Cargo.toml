@@ -1,0 +1,3 @@
+[workspace]
+members = ["linera-backend/zigzag-score"]
+resolver = "2"

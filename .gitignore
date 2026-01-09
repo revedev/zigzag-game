@@ -1,0 +1,13 @@
+# Ignore heavy dependencies
+node_modules/
+target/
+dist/
+
+# Ignore local system files
+.DS_Store
+Thumbs.db
+
+# Ignore local blockchain data (Generated when running)
+*.db
+wallet*.json
+storage/
