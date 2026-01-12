@@ -13,3 +13,14 @@ A decentralized game built with React (Frontend) and Rust (Linera SDK Backend).
 2. Run the unit tests to prove the smart contract works:
    ```bash
    cargo test
+
+
+
+   ## 🎮 How to Run (Testnet Mode)
+To connect the game to the real Linera Testnet (Conway), follow these steps:
+
+1. **Start the Bridge:**
+   Initialize your wallet and start the local service:
+   ```bash
+   linera wallet init --faucet [https://faucet.testnet-conway.linera.net](https://faucet.testnet-conway.linera.net)
+   linera service --port 8080

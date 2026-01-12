@@ -30,16 +30,24 @@ const GET_SCORE = gql`
 
 export const lineraService = {
   submitScore: async (points) => {
-    // ---------------------------------------------------------
-    // 🔴 DEMO MODE: Simulates Blockchain for the Live URL
-    // ---------------------------------------------------------
-    
-    console.log(`[DEMO] Preparing to send ${points} points...`);
-
-    // 1. Fake a small network delay (500ms) to make it feel real
-    await new Promise((resolve) => setTimeout(resolve, 500));
-
-    // 2. Log success (Simulating what the blockchain would do)
-    console.log(`✅ [SUCCESS] Blockchain received ${points} points!`);
+    try {
+      await client.mutate({
+        mutation: INCREMENT_SCORE,
+        variables: { amount: points },
+      });
+      console.log(`✅ Sent ${points} points to Blockchain`);
+    } catch (error) {
+      console.warn("⚠️ Blockchain offline (Simulation Mode):", error.message);
+    }
   },
+
+  fetchScore: async () => {
+    try {
+      const result = await client.query({ query: GET_SCORE });
+      return result.data.value;
+    } catch (error) {
+      console.warn("⚠️ Blockchain offline (Simulation Mode):", error.message);
+      return 0;
+    }
+  }
 };
